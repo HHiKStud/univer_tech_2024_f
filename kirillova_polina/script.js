@@ -10,12 +10,12 @@ async function MethodGetUsers() {
         xhr2.onload = function() {
             let response2 = JSON.parse(xhr2.response)
             response1.forEach((user, index) => {
-                let filtered = response_2.filter(ToDo => ToDo.userId === user.id)    
+                let filtered = response2.filter(ToDo => ToDo.userId === user.id)    
                 filtered.forEach((filtered) => {
                     let row = "<tr>"
                     row += "<th>"+index+"</th>"
                     row += "<th>"+user.name+"</th>"
-                    row += "<th>"+mixed.title+"</th>"
+                    row += "<th>"+filtered.title+"</th>"
                     row += "<th><input type='checkbox'"+(filtered.completed ? 'checked':'')+"disabled></th>"
                     row += "</tr>"
                     $("table tbody").append(row)
